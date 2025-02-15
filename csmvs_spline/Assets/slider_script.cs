@@ -68,7 +68,8 @@ public class slider_script : MonoBehaviour, IPointerDownHandler, IPointerUpHandl
 
     public void OnPointerDown(PointerEventData eventData)
     {
-        old_slider_value = slider.value;
+        //no movement if slider is pressed in between
+        //old_slider_value = slider.value;
         og_offset = new float[images.Count];
         og_offset_large = new float[images_large.Count];
 
@@ -93,7 +94,9 @@ public class slider_script : MonoBehaviour, IPointerDownHandler, IPointerUpHandl
     }
 
     public void OnPointerUp(PointerEventData eventData)
-    {
+    {   
+        //movement if slider is pressed in between
+        old_slider_value = slider.value;
         Debug.Log("huh2");
         slider_pressed = false;
     }
