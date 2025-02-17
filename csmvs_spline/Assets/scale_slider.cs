@@ -3,6 +3,7 @@ using UnityEngine.UI;
 
 public class scale_slider : MonoBehaviour
 {
+    //[Range(1.0f, 5.0f)]
     public Slider scaleSlider;
     private float scaleSliderNumber;
 
