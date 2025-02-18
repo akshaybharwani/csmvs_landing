@@ -10,6 +10,7 @@ public class slider_script : MonoBehaviour, IPointerDownHandler, IPointerUpHandl
 {
 
     public Slider slider;
+    public Slider speed_slider;
 
     public GameObject image_container;
     public GameObject image_container_large;
@@ -145,6 +146,17 @@ public class slider_script : MonoBehaviour, IPointerDownHandler, IPointerUpHandl
                 
             }
         }
+
+       for (int i = 0; i < images.Count; i++)
+            {
+                images[i].GetComponent<SplineAnimate>().MaxSpeed = speed_slider.value * 2f;
+            }
+
+            for (int i = 0; i < images_large.Count; i++)
+            {
+                images_large[i].GetComponent<SplineAnimate>().MaxSpeed = speed_slider.value * 5f;
+            }
+        
 
 
 
